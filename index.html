@@ -187,7 +187,8 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="1-安装maven"><a href="#1-安装maven" class="headerlink" title="1. 安装maven"></a>1. 安装maven</h2><blockquote>
-<p>打开终端的按钮在左上角，如图所示：<br> <img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/58bd552c0c31488a97990ca85cf6aa10.png" alt="da1f84e9a7604765beeb868db844455b.png"></p>
+<p>打开终端的按钮在左上角，如图所示：</p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/58bd552c0c31488a97990ca85cf6aa10.png"></p>
 </blockquote>
 <ul>
 <li>解压maven</li>
@@ -202,7 +203,7 @@
 <p>在<mirrors>节点添加如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">	&lt;id&gt;aliyunmaven&lt;/id&gt;</span><br><span class="line">	&lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">	&lt;name&gt;阿里云公共仓库&lt;/name&gt;</span><br><span class="line">	&lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
 
-<p>如下图：<br> <img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/3fadafd6de814a50b530c10addda70dc.png" alt="c9a0653488324eb08397b7a1d3ceb807.png"></p>
+<p>如下图：<br> <img src="/9-2%E6%94%BB%E7%95%A5/3fadafd6de814a50b530c10addda70dc.png"></p>
 <blockquote>
 <p>注意：<br> 如果Maven设置了<code>阿里云</code>或其他外网镜像仓库，但无法下载依赖，很可能代表你处在内网环境下，无法访问到外网的镜像仓库，可以设置<code>Maven</code>为我们提前准备好的私有镜像仓库:<code>http://nexus3.plugins.svc/repository/maven-public/</code>,然后再尝试下载所需依赖。如下：</p>
 </blockquote>
@@ -210,28 +211,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">	&lt;id&gt;nexus&lt;/id&gt;  </span><br><span class="line">	&lt;name&gt;nexus maven&lt;/name&gt;  </span><br><span class="line">	&lt;url&gt;http://nexus3.plugins.svc/repository/maven-public/&lt;/url&gt;  </span><br><span class="line">	&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;  </span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="2-使用Eclipse工具开发WordCount程序"><a href="#2-使用Eclipse工具开发WordCount程序" class="headerlink" title="2. 使用Eclipse工具开发WordCount程序"></a>2. 使用Eclipse工具开发WordCount程序</h2><p>首先在桌面上双击<code>eclipse</code>图标启动<code>Eclipse</code>。</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/9bcbdf80c99e4d2886808ef6a85b53cc.png" alt="2ef48d4175f14a64bc4c476669368c77.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/9bcbdf80c99e4d2886808ef6a85b53cc.png"></p>
 <p>当<code>Eclipse</code>启动以后，会弹出如下图所示界面，提示设置工作空间（<code>workspace</code>）。</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/9b5f1aebbbe3454c89c30911c0d4d93d.png" alt="b7b5ec8a6c574ee3aed0c93144d8ac25.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/9b5f1aebbbe3454c89c30911c0d4d93d.png"></p>
 <p>可以直接采用默认的设置<code>/home/hadoop/workspace</code>，点击<code>Launch</code>按钮。</p>
 <blockquote>
 <p>可以看出，由于当前是采用<code>hadoop</code>用户登录了Linux系统，因此，默认的工作空间目录位于hadoop用户目录<code>/home/hadoop</code>下。</p>
 </blockquote>
 <p>Eclipse启动以后，会呈现如下图所示的界面。</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/c69ef6f92bda42bca77706abf6636d5f.png" alt="35a1b41a0181489698b8772a0ef50568.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/c69ef6f92bda42bca77706abf6636d5f.png"></p>
 <blockquote>
-<p>由于本实践环境安装的<code>Eclipse</code>启动时，默认提供的是<code>Scala</code>的透视图（Perspective），需要切换到<code>Java</code>透视图<br> 请通过<code>Window</code> -&gt; <code>Perspective</code> -&gt; <code>Open Perspective</code> -&gt; <code>Other</code> 打开透视图选择<br> <img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/3eb8c9c971014fdb86612b90869f405a.png" alt="cbb4f77215324158b037d60d2c7d208a.png"><br> 如图所示，选中<code>Java</code>，并点击<code>Open</code>即可<br> <img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/82d6bc8ab51d4528a51a57f0ca0e3458.png" alt="196923c2164b472da75697c60f473b61.png"></p>
+<p>由于本实践环境安装的<code>Eclipse</code>启动时，默认提供的是<code>Scala</code>的透视图（Perspective），需要切换到<code>Java</code>透视图<br> 请通过<code>Window</code> -&gt; <code>Perspective</code> -&gt; <code>Open Perspective</code> -&gt; <code>Other</code> 打开透视图选择<br> <img src="/9-2%E6%94%BB%E7%95%A5/3eb8c9c971014fdb86612b90869f405a.png"><br> 如图所示，选中<code>Java</code>，并点击<code>Open</code>即可<br> <img src="/9-2%E6%94%BB%E7%95%A5/82d6bc8ab51d4528a51a57f0ca0e3458.png"></p>
 </blockquote>
 <p>配置maven:</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/5fcd38e0d1d843639d8f77376136d666.png" alt="a066b01d09a54f07b1cb4a5c1c8c4b35.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/5fcd38e0d1d843639d8f77376136d666.png"></p>
 <p>设置前面创建的Maven配置文件<code>/usr/local/hadoop/maven/conf/settings.xml</code></p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/b135e1e117124dde9d007a71e3277cd8.png" alt="031688a6a0144960957b9f09cb976d48.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/b135e1e117124dde9d007a71e3277cd8.png"></p>
 <p>开始创建一个Maven工程，会如下图所示。</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/3b73e61ce6e14c62a4248d1d36b01a3c.png" alt="66f8993fa04046ce9d445baaca7f0424.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/3b73e61ce6e14c62a4248d1d36b01a3c.png"></p>
 <p>选择<code>Maven Project</code></p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/bd7e6e9c6e5e4d158582792423d79b63.png" alt="da7d10d218f84360a04f2d2a210f4eed.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/58bd552c0c31488a97990ca85cf6aa10.png"></p>
 <p>勾选<code>Create a simple project(skip archetype selection)</code>复选框</p>
-<p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/3650c0a20d5e4735a802beb66c836d47.png" alt="0f49ab9aecf247e5b29428eb6b0eb358.png"></p>
+<p><img src="/9-2%E6%94%BB%E7%95%A5/3650c0a20d5e4735a802beb66c836d47.png"></p>
 <p>设置<code>Group Id</code>、<code>Artifact Id</code>和<code>Name</code>的值</p>
 <p><img src="http://172.20.1.9/file-system/system/course/b9d38ac018f7488f8c545bf19efcb95d/file/dbc3cb4029c34f2889589fa0330d7266.png" alt="ed80d6483bad43139f665de16cb38f17.png"><br> 这里设置的<code>Group Id</code>是<code>dblab</code>，<code>Artifact Id</code>是<code>FlinkWordCount</code>，<code>Name</code>是<code>FlinkWordCount</code></p>
 <p>修改pom文件，添加如下内容</p>
